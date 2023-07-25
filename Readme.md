@@ -7,6 +7,7 @@ doivent être affectés par le constructeur.
 2) Ajoutez une méthode affiche() qui affiche la somme et le taux comme ci-dessous :
 
 Compte | somme : 2000€ | taux : 2%
+
 3) Ajoutez une méthode depot(x) qui ajoute x à la somme sur le compte.
 
 4) Ajoutez une méthode retrait(x) qui enlève x à la somme sur le compte. 
