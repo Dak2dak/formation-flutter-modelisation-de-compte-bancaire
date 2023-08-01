@@ -1,11 +1,9 @@
 
-
-
 class Account {
 
     // Attributes
-    double ? amount;
-    double ? rate;
+    double amount;
+    double rate;
 
     // Constructor
     Account (
@@ -15,23 +13,40 @@ class Account {
 
     // Methodes
     void display(){
-      print("Account | Amount : ${this.amount} | rate : ${this.rate}");
+      print("Account | Amount : ${this.amount}£ | rate : ${this.rate}%");
     }
 
-    deposit(amount, x) {
-      return amount = amount + x;
+    double deposit(double x) {
+      amount += x;
+      return amount;
     }
 
-    withdraw(amount, x) {
+    void withdraw(double x) {
       if(amount < x){
         throw new Exception("Can't withdraw an amount that's more than what's on the account.");
       }
-      return amount = amount - x;
+      else 
+        amount = amount - x;
     }
 
-    interest(amount, rate) {
-      double interest = 0;
-      return interest = ( amount * rate )/ 100; 
+    void interest(amount, rate) {
+      int temp = 365;
+      double interest = ( amount * rate )/ 100 * temp; 
+      amount += interest;
     }
 
+}
+
+void main() {
+  Account account = new Account(2000, 2);
+  account.display();
+
+  account.deposit(5000);
+  account.display();
+
+  account.withdraw(1500);
+  account.display();
+
+  account.interest(2000, 2);
+  account.display();
 }
